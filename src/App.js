@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./App.css";
+import BasicExample from "./Progressbar";
+//import ProgressBar from 'react-bootstrap/ProgressBar';
 
 const questions = [
   {
@@ -61,13 +63,16 @@ function App() {
 
   return (
     <div className="app">
+    <BasicExample/>
       {showScore ? (
         <div className="score-section">
+        
           Você pontuou {score} de {questions.length}
         </div>
-      ) : (
+      ) :(
         <>
           <div className="question-section">
+          
             <div className="question-count">
               <span>Questão {currentQuestion + 1}</span>/{questions.length}
             </div>
@@ -89,9 +94,11 @@ function App() {
             )}
           </div>
         </>
-      )}
+       )}
     </div>
   );
 }
+
+
 
 export default App;
