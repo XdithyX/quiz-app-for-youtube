@@ -1,4 +1,3 @@
-
 * {
   font-family: "Verdana", cursive, sans-serif;
   color: #ffffff;
@@ -12,18 +11,31 @@ body {
   min-height: 100vh;
 }
 
-.app {
+.main-container {
   background-color: #252d4a;
   width: 450px;
   min-height: 200px;
-  height: min-content;
   border-radius: 15px;
   padding: 20px;
   box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
   display: flex;
   justify-content: space-evenly;
 }
+.progress__parent{
 
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  background-color: #ffffff;
+  
+}
+.text{
+  background-color: #2f922f;
+  color: #ff3333;
+}
+.progress__child{
+  width: 225px;
+}
 .score-section {
   display: flex;
   font-size: 24px;

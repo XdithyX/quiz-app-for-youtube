@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
-import BasicExample from "./Progressbar";
+import ProgressbarComponent from "./ProgressbarComponent";
+// import BasicExample from "./Progressbar";
 //import ProgressBar from 'react-bootstrap/ProgressBar';
 
 const questions = [
@@ -44,13 +45,21 @@ const questions = [
 ];
 
 function App() {
+
+const [right,setright] =useState(0)
+const [wrong,setwrong] =useState(0)
+
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
   function handleAnswer(isCorrect) {
     if (isCorrect) {
+      setright(right+25)
+
       setScore(score + 1);
+    }else{
+      setwrong(wrong+25)
     }
 
     const nextQuestion = currentQuestion + 1;
@@ -63,7 +72,18 @@ function App() {
 
   return (
     <div className="app">
-    <BasicExample/>
+    <div className="progress__parent">
+    <div className="progress__child">
+    <h1 className="text">right</h1>
+      <ProgressbarComponent value={right}/>
+      </div>
+      <div className="progress__child">
+      <h1 className="text">wrong</h1>
+      <ProgressbarComponent value={wrong}/>
+      </div>
+      </div>
+      <div className="main-container">
+    
       {showScore ? (
         <div className="score-section">
         
@@ -95,6 +115,7 @@ function App() {
           </div>
         </>
        )}
+    </div>
     </div>
   );
 }
